@@ -1,0 +1,140 @@
+<html>
+<head>
+  <title>Test</title>
+  <script src='./bundle.js'></script>
+  <script>
+const { containerBootstrap, Nlp, LangEn, fs } = window.nlpjs;
+
+(async () => {
+  const container = await containerBootstrap();
+  container.register('fs', fs);
+  container.use(Nlp);
+  container.use(LangEn);
+  const nlp = container.get('nlp');
+  nlp.settings.autoSave = false;
+  // await nlp.addCorpus('https://raw.githubusercontent.com/jesus-seijas-sp/nlpjs-examples/master/01.quickstart/02.filecorpus/corpus-en.json');
+  //await nlp.addCorpus('./profile.json');
+  await nlp.addCorpus('./corpus-en.json');
+  await nlp.train();
+  const response = await nlp.process('en', 'who are you');
+  console.log(response.answer);
+
+  const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const messages = document.getElementById('messages');
+
+    
+  async function getNLPResponse(query) {
+    const response2= await nlp.process('en', query);
+    return response2.answer;
+    }
+    sendBtn.addEventListener('click', async () => {
+        const query = userInput.value.trim();
+        if (!query) return;
+
+        // Display user message
+        appendMessage('user', query);
+        userInput.value = '';
+
+        // Call OpenAI API
+        //const response = await getChatbotResponse(query);
+        const response = await getNLPResponse(query);
+        
+        appendMessage('bot', response);
+    });
+
+    function appendMessage(sender, text) {
+        const message = document.createElement('div');
+        message.className = sender;
+        message.textContent = text;
+        messages.appendChild(message);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+})();
+</script>
+
+<script>
+
+    async function getChatbotResponse(query) {
+        try {
+            const res = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer YOUR_OPENAI_API_KEY',
+                },
+                body: JSON.stringify({
+                    model: 'gpt-4',
+                    messages: [{ role: 'user', content: query }],
+                }),
+            });
+
+            const data = await res.json();
+            return data.choices[0]?.message?.content || 'Error: Unable to fetch response.';
+        } catch (error) {
+            console.error(error);
+            return 'Error: Something went wrong.';
+        }
+    }
+</script>
+</head>
+<body>
+<div id="chatbot">
+    <div id="chat-window">
+        <div id="messages"></div>
+    </div>
+    <div id="input-area">
+        <input type="text" id="user-input" placeholder="Ask me anything...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+
+    <style>
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+        #chat-window {
+            height: 400px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            padding: 10px;
+        }
+        #messages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #input-area {
+            display: flex;
+            padding: 10px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+        }
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #send-btn {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,175 @@
+{
+    "name": "Corpus",
+    "locale": "en-US",
+    "data": [
+        {
+            "intent": "candidate.introduction",
+            "utterances": [
+                "Can you introduce yourself?",
+                "Tell me about yourself.",
+                "Can you describe your professional background?",
+                "How would you summarize your experience?",
+                "What is your current role and responsibilities?"
+            ],
+            "answers": [
+                "I am Faizan Shaikh, a Sr. Technical Lead with over 13 years of experience in software development. My expertise lies in full-stack application development, Generative AI, and Azure cloud services. I specialize in creating scalable, efficient applications and implementing robust CI/CD pipelines."
+            ]
+        },
+        {
+            "intent": "candidate.skills",
+            "utterances": [
+                "What are your technical skills?",
+                "Can you list the technologies you have worked with?",
+                "What programming languages are you proficient in?",
+                "What cloud services are you experienced with?",
+                "What tools do you use for development?"
+            ],
+            "answers": [
+                "I have expertise in .NET Core, Angular, HTML, CSS, JavaScript, and databases like SQL Server and MongoDB. I am also skilled in cloud services such as Azure and AWS, particularly in Azure OpenAI, Logic Apps, and Function Apps."
+            ]
+        },
+        {
+            "intent": "candidate.projects",
+            "utterances": [
+                "Can you tell me about a challenging project you worked on?",
+                "What kind of applications have you developed?",
+                "Can you give examples of your recent projects?",
+                "Have you worked on AI-powered applications?",
+                "What was your role in your last project?"
+            ],
+            "answers": [
+                "One of my recent projects involved developing a chatbot using Azure OpenAI for a SaaS application. The chatbot included NLP search capabilities and a retrieval-augmented generation feature. I also created a document translator and summarizer using Azure Logic Apps and OpenAI."
+            ]
+        },
+        {
+            "intent": "candidate.leadership",
+            "utterances": [
+                "Have you led a team before?",
+                "What is your approach to team management?",
+                "How do you mentor junior developers?",
+                "Have you handled conflicts in a team setting?",
+                "What is your leadership style?"
+            ],
+            "answers": [
+                "I have led multiple teams in developing complex software solutions. My approach involves clear communication, fostering collaboration, and guiding team members in technical and professional growth. I ensure smooth delivery by aligning team goals with project requirements."
+            ]
+        },
+        {
+            "intent": "candidate.challenges",
+            "utterances": [
+                "What challenges have you faced in your career?",
+                "How do you handle tight deadlines?",
+                "Have you ever had to quickly learn new technology?",
+                "Can you describe a time when you solved a major issue?",
+                "What do you do when a project doesn’t go as planned?"
+            ],
+            "answers": [
+                "In one instance, I had to quickly integrate a newly adopted technology into a project under a tight deadline. I addressed this by breaking the task into smaller, manageable components and collaborating closely with the team, ensuring timely and efficient delivery."
+            ]
+        },
+        {
+            "intent": "candidate.futuregoals",
+            "utterances": [
+                "What are your career goals?",
+                "Where do you see yourself in five years?",
+                "What do you want to achieve in your next role?",
+                "How do you plan to grow professionally?",
+                "What motivates you in your career?"
+            ],
+            "answers": [
+                "I aim to continue leveraging my technical expertise and leadership skills to create innovative solutions. I also aspire to explore emerging technologies, particularly in AI and cloud computing, while mentoring future developers."
+            ]
+        },
+        {
+            "intent": "candidate.work_experience",
+            "utterances": [
+                "Can you walk me through your work experience?",
+                "What companies have you worked for?",
+                "What are your most recent roles?",
+                "Can you describe your role at Orion Innovation?",
+                "What kind of projects did you handle at your previous companies?"
+            ],
+            "answers": [
+                "I am currently working as a Sr. Technical Lead at Orion Innovation, where I lead projects involving software asset management and AI-powered applications. My past roles include Technical Lead at Orion Innovation, Senior Software Developer at Duff & Phelps, and various other roles at Sure Prep, Fox Solutions, and Winjit Technologies."
+            ]
+        },
+        {
+            "intent": "candidate.projects_detail",
+            "utterances": [
+                "Can you elaborate on a significant project?",
+                "What was your role in the Acuity Portal project?",
+                "How did you develop the RegSamart ChatBot?",
+                "Can you tell me about the Fixed Asset Management Solution?",
+                "What were your responsibilities in the Tax Caddy project?"
+            ],
+            "answers": [
+                "One of my key projects was developing the Acuity Portal for software and service management. I led the design and implementation of a chatbot with software consumption logs and developed a contract document translator using Azure AI services. Another significant project was the RegSamart ChatBot, which integrated a custom knowledge base of FDA guidance documents for efficient regulatory management."
+            ]
+        },
+        {
+            "intent": "candidate.education",
+            "utterances": [
+                "Can you tell me about your education?",
+                "Where did you study?",
+                "What is your highest qualification?",
+                "Did you study computer science?",
+                "Do you have a degree in engineering or IT?"
+            ],
+            "answers": [
+                "I hold a Master of Computer Application (MCA) degree from Pune University, which I completed in 2010. I also have a Bachelor of Science in Electronics, also from Pune University, completed in 2007."
+            ]
+        },
+        {
+            "intent": "candidate.education_details",
+            "utterances": [
+                "Why did you choose to study computer applications?",
+                "How has your education contributed to your career?",
+                "Did you pursue any certifications along with your degree?",
+                "What was your focus during your MCA?",
+                "Can you describe your academic journey?"
+            ],
+            "answers": [
+                "During my MCA program, I gained a strong foundation in software development, algorithms, and system design, which has been pivotal to my career. My focus was on practical application development and keeping up with emerging technologies."
+            ]
+        },
+        {
+            "intent": "candidate.personal_details",
+            "utterances": [
+                "Can you tell me about yourself outside of work?",
+                "Where are you based?",
+                "Can you share your contact information?",
+                "What is your nationality?",
+                "Are you open to relocation?"
+            ],
+            "answers": [
+                "I am based in Mumbai, Maharashtra, India. My nationality is Indian, and I enjoy working on innovative projects. I am open to relocation if the opportunity aligns with my career goals."
+            ]
+        },
+        {
+            "intent": "candidate.personal_hobbies",
+            "utterances": [
+                "What are your hobbies?",
+                "How do you spend your free time?",
+                "Do you have any interests outside of work?",
+                "What do you enjoy doing in your spare time?",
+                "What are your passions?"
+            ],
+            "answers": [
+                "In my free time, I enjoy exploring new technologies, staying updated with advancements in AI, and mentoring aspiring developers. I also like reading and contributing to tech communities."
+            ]
+        },
+        {
+            "intent": "candidate.relocation_availability",
+            "utterances": [
+                "Are you open to relocating?",
+                "Would you consider moving for the right job?",
+                "Are you flexible with relocation requirements?",
+                "Would you move for a better opportunity?",
+                "Do you have any location preferences?"
+            ],
+            "answers": [
+                "Yes, I am open to relocation if the role offers a good fit with my career aspirations and personal goals. I value opportunities for growth and development."
+            ]
+        }
+    ]
+}
